@@ -53,7 +53,8 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  s = String.new("Hello, ")
+  return s << name
 end
 
 def starts_with_consonant? s
