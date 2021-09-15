@@ -53,15 +53,16 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  s = String.new("Hello, ")
+  return s << name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  return !s.empty? && s.downcase[0] =~ /[a-z]/i && !s.downcase.start_with?("a", "e", "i", "o", "u")
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return s == "0" || s =~ /\A[0,1]*00\z/
 end
 
 # Part 3
