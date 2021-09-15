@@ -1,17 +1,53 @@
 # When done, submit this entire file to the autograder.
 
-# Part 1
+# Part 
 
 def sum arr
-  # YOUR CODE HERE
+  _sum = 0
+  arr.each do |number| _sum += number end
+  return _sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  elsif arr.length == 1
+    return arr[0]
+  else
+    _largest = -999999
+    _second_largest = -999999
+    arr.each do |number|
+      if number >= _largest
+        _second_largest = _largest
+        _largest = number
+      elsif number >= _second_largest
+        _second_largest = number
+      end
+    end
+    return _largest + _second_largest
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.length <= 1
+    return false
+  else
+    for i in (0...arr.length) do 
+      for j in (0...arr.length) do
+        if i == j
+          next
+        else
+          if arr[i] + arr[j] == n
+            return true
+          else
+            next
+          end
+        end
+      end
+    end
+  end
+  
+  return false
 end
 
 # Part 2
