@@ -1,6 +1,6 @@
 # When done, submit this entire file to the autograder.
 
-# Part 1
+# Part 
 
 def sum arr
   _sum = 0
@@ -14,8 +14,8 @@ def max_2_sum arr
   elsif arr.length == 1
     return arr[0]
   else
-    _largest = Integer::MIN
-    _second_largest = Integer::MIN
+    _largest = -999999
+    _second_largest = -999999
     arr.each do |number|
       if number >= _largest
         _second_largest = _largest
