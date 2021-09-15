@@ -3,14 +3,29 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
   _sum = 0
   arr.each do |number| _sum += number end
   return _sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  elsif arr.length == 1
+    return arr[0]
+  else
+    _largest = Integer::MIN
+    _second_largest = Integer::MIN
+    arr.each do |number|
+      if number >= _largest
+        _second_largest = _largest
+        _largest = number
+      elsif number >= _second_largest
+        _second_largest = number
+      end
+    end
+    return _largest + _second_largest
+  end
 end
 
 def sum_to_n? arr, n
