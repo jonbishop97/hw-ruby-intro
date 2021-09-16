@@ -76,4 +76,7 @@ class BookInStock
     @isbn, @price = i, p
   end
   
+  def price_as_string
+    return "$%0.2f" % [@price]
+  end
 end
