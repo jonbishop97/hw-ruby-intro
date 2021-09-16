@@ -68,5 +68,15 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  attr_accessor :isbn
+  attr_accessor :price
+  
+  def initialize(i, p)
+    raise ArgumentError, "Invalid arguments"  unless !i.empty? && p > 0.00
+    @isbn, @price = i, p
+  end
+  
+  def price_as_string
+    return "$%0.2f" % [@price]
+  end
 end
